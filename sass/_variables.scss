@@ -1,0 +1,14 @@
+
+// Create some color variables
+$light-gray: #ccc;
+$dark-gray: #444;
+$red: #ff0000;
+$orange: #FB8B6F;
+
+// Create variables and define them as other variables
+$link-color: $dark-gray;
+$link-color_hover: $orange;
+
+
+// Create variable for responsive breakpoints
+$tablet: 800px;

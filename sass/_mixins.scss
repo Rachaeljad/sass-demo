@@ -1,0 +1,30 @@
+
+// Create Clearfix Mixin
+@mixin clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+
+// Create Ease Mixin
+@mixin ease($time: 333ms) {
+  transition: $time all ease-in-out;
+}
+
+
+
+// Breakpoint
+@mixin breakpoint($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}

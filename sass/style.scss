@@ -1,0 +1,131 @@
+
+* { box-sizing: border-box; }
+
+
+
+// ----- Mixins ----- //
+@import "mixins";
+
+
+
+
+// ----- Variables ----- //
+@import "variables";
+
+
+
+
+// ----- Grid ----- //
+@import "grid";
+
+
+
+
+
+// ----- Begin Styles ----- //
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', helvetica, sans-serif;
+}
+
+a {
+  color: $link-color; // Using our link color variable
+  @include ease; // Including our ease mixin
+
+  &:hover {
+    color: $link-color_hover; // Using the other link color variable
+  }
+}
+
+
+// Header
+header {
+  background: $light-gray;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  body#home & {
+    margin-bottom: 0;
+  }
+
+  .row {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint ($tablet) {
+    text-align: center;
+  }
+}
+
+.logo {
+  float: left;
+  width: 65px;
+
+  @include breakpoint ($tablet) {
+    float: none;
+    width: 80px;
+  }
+}
+
+nav {
+  margin-top: 21px;
+
+  header & {
+    float: right;
+    text-align: right;
+
+    @include breakpoint ($tablet) {
+      float: none;
+      text-align: center;
+    }
+  }
+
+  a {
+    margin-right: 20px;
+    font-size: 13px;
+    text-decoration: none;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}
+
+
+
+// Hero
+.hero {
+  background: $light-gray;
+  background-image: url('https://unsplash.imgix.net/uploads/1411589183965bdf6e141/5f468e98?fit=crop&fm=jpg&h=700&q=75&w=1050');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  h1 {
+    margin: 0;
+    padding: 120px 0;
+    color: white;
+    text-shadow: 0 0 10px $dark-gray;
+    text-align: center;
+  }
+}
+
+
+
+// Google Map
+iframe {
+  max-width: 100%;
+}
+
+
+
+// Footer
+footer {
+  background: $light-gray;
+  margin-top: 60px;
+  padding: 5px 0;
+  font-size: 11px;
+  text-align: center;
+}
