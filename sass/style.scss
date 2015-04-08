@@ -1,131 +1,136 @@
 
-* { box-sizing: border-box; }
 
-
-
-// ----- Mixins ----- //
-@import "mixins";
-
-
-
-
-// ----- Variables ----- //
 @import "variables";
-
-
-
-
-// ----- Grid ----- //
 @import "grid";
 
 
 
-
-
-// ----- Begin Styles ----- //
-
-body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Open Sans', helvetica, sans-serif;
+* { box-sizing: border-box; }
+/* Clearfix */
+.clearfix {
+  *zoom: 1;
 }
 
-a {
-  color: $link-color; // Using our link color variable
-  @include ease; // Including our ease mixin
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
 
-  &:hover {
-    color: $link-color_hover; // Using the other link color variable
-  }
+.clearfix:after {
+  clear: both;
+}
+
+body{
+	padding:0;
+    margin:0;
+    font-family: 'Open Sans', helvetica, sans-serif;
 }
 
 
-// Header
+/* Header */
 header {
-  background: $light-gray;
+  background: $blue;
   padding: 10px;
   margin-bottom: 20px;
-
-  body#home & {
-    margin-bottom: 0;
-  }
-
-  .row {
-    margin-bottom: 0;
-  }
-
-  @include breakpoint ($tablet) {
-    text-align: center;
-  }
 }
+
+body#home header {
+  margin-bottom: 0;
+}
+
+
 
 .logo {
   float: left;
   width: 65px;
-
-  @include breakpoint ($tablet) {
-    float: none;
-    width: 80px;
-  }
-}
-
-nav {
-  margin-top: 21px;
-
-  header & {
-    float: right;
-    text-align: right;
-
-    @include breakpoint ($tablet) {
-      float: none;
-      text-align: center;
-    }
-  }
-
-  a {
-    margin-right: 20px;
-    font-size: 13px;
-    text-decoration: none;
-
-    &:last-of-type {
-      margin: 0;
-    }
-  }
 }
 
 
 
-// Hero
+header{
+    body#home & {
+    margin-bottom: 0;
+  }
+  @media (max-width: 500px) {
+       text-align: center;
+  }
+
+
+    .row {
+        margin-bottom: 0;
+    }
+    nav {
+        margin-top: 21px;
+        float: right;
+        text-align: right;
+           a {
+              margin-right: 20px;
+              font-size: 13px;
+              color: #444;
+              text-decoration: none;
+              transition: 333ms all ease-in-out;
+
+              &:last-of-type {
+                margin: 0;
+                &:hover{
+                  color: #FB8B6F;
+                }
+              }
+          }
+    }
+}
+
+
+
+/* Footer */
+footer {
+  background: $red;
+  margin-top: 60px;
+  padding: 5px 0;
+  font-size: 13px;
+  text-align: center;
+}
+
+
+
+
+/* Hero */
 .hero {
-  background: $light-gray;
-  background-image: url('https://unsplash.imgix.net/uploads/1411589183965bdf6e141/5f468e98?fit=crop&fm=jpg&h=700&q=75&w=1050');
+  background: #ccc;
+  background-image: url(https://unsplash.imgix.net/uploads/1411589183965bdf6e141/5f468e98?fit=crop&fm=jpg&h=700&q=75&w=1050);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
 
-  h1 {
-    margin: 0;
-    padding: 120px 0;
-    color: white;
-    text-shadow: 0 0 10px $dark-gray;
+.hero h1 {
+  margin: 0;
+  padding: 120px 0;
+  color: white;
+  text-shadow: 0 0 10px #444;
+  text-align: center;
+}
+
+/*responsive*/
+
+@media (max-width: 500px) {
+  header {
     text-align: center;
   }
-}
 
+  .logo {
+    float: none;
+    width: 80px;
+  }
 
+  header nav {
+    float: none;
+    text-align: center;
+  }
 
-// Google Map
-iframe {
-  max-width: 100%;
-}
-
-
-
-// Footer
-footer {
-  background: $light-gray;
-  margin-top: 60px;
-  padding: 5px 0;
-  font-size: 11px;
-  text-align: center;
+  .column {
+    width: 100% !important;
+    margin-right: 0;
+  }
 }
