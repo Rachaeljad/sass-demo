@@ -2,62 +2,51 @@
 .row {
   width: 90%;
   max-width: 800px;
-  margin: auto, 20px; }
+  margin: 0 auto 20px;
+  *zoom: 1; }
+  .row:before, .row:after {
+    content: " ";
+    display: table; }
+  .row:after {
+    clear: both; }
 
 .column {
   float: left;
   margin-right: 2%; }
-
-.column.two-third {
-  width: 65%; }
-
-.column.one-half {
-  width: 49%; }
-
-.column.one-third {
-  width: 32%; }
-
-.column:last-of-type {
-  margin-right: 0; }
+  .column.two-third {
+    width: 65%; }
+  .column.one-half {
+    width: 49%; }
+  .column.one-third {
+    width: 32%; }
+  .column:last-of-type {
+    margin-right: 0; }
+  @media (max-width: 800px) {
+    .column {
+      width: 100% !important; } }
 
 * {
   box-sizing: border-box; }
 
-/* Clearfix */
-.clearfix {
-  *zoom: 1; }
-
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table; }
-
-.clearfix:after {
-  clear: both; }
-
 body {
   padding: 0;
-  margin: 0;
+  margin: auto;
   font-family: 'Open Sans', helvetica, sans-serif; }
 
 /* Header */
 header {
-  background: #0000ff;
+  background: #6699CC;
   padding: 10px;
   margin-bottom: 20px; }
 
 body#home header {
   margin-bottom: 0; }
-
-.logo {
-  float: left;
-  width: 65px; }
-
-body#home header {
-  margin-bottom: 0; }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   header {
     text-align: center; } }
+header .logo {
+  float: left;
+  width: 65px; }
 header .row {
   margin-bottom: 0; }
 header nav {
@@ -91,29 +80,11 @@ footer {
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
-
-.hero h1 {
-  margin: 0;
-  padding: 120px 0;
-  color: white;
-  text-shadow: 0 0 10px #444;
-  text-align: center; }
-
-/*responsive*/
-@media (max-width: 500px) {
-  header {
+  .hero h1 {
+    margin: 0;
+    padding: 120px 0;
+    color: white;
+    text-shadow: 0 0 10px #444;
     text-align: center; }
-
-  .logo {
-    float: none;
-    width: 80px; }
-
-  header nav {
-    float: none;
-    text-align: center; }
-
-  .column {
-    width: 100% !important;
-    margin-right: 0; } }
 
 /*# sourceMappingURL=style.css.map */

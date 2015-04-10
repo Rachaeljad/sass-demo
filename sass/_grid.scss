@@ -3,25 +3,24 @@
 .row{
 	width:90%;
 	max-width:800px;
-	margin: auto, 20px;
+	margin: 0 auto 20px;
+	@include clearfix;
 }
-
 .column {
-  float: left;
-  margin-right: 2%;
-}
+ 	 float: left;
+  	margin-right: 2%;
 
 
-.column.two-third {
-  width: 65%;
-}
-.column.one-half {
-  width: 49%;
-}
-.column.one-third {
-  width: 32%
-}
+   &.two-third {width: 65%;}
 
-.column:last-of-type {
-  margin-right: 0;
+   &.one-half {width: 49%;}
+
+   &.one-third {width: 32%}
+
+  &:last-of-type {margin-right: 0;}
+
+		@include breakpoint($tablet){
+			width:100% !important
+			
+  }
 }
